@@ -1,0 +1,16 @@
+***ABRE UN DIV DENTRO DE OTRO DIV---
+            <!-- <?php
+            $query = "SELECT * FROM participante";
+            $ejecutar = mysqli_query($conexion,$query) or die(mysqli_error($conexion));
+            ?>
+            <?php foreach ($ejecutar as $valores):   ?>
+                <div class="div-row" id="<?php echo $valores['id_Alumno'] ?>">              
+                 <img height="70px" src="data:image/jpg;base64,<?php echo base64_encode($valores['Fotografia']);?>"/>                    
+                 <?php endforeach; ?>
+                 </div>   -->
+
+***************CONSULTAS SQL*********
+-------grados-------------
+SELECT historial_grados.id_Alumno, historial_grados.id_Grado,historial_grados.Grado_Fecha,grados.Nom_Grado,participante.Nombres,participante.Apellidos,participante.Sexo,participante.Edad,participante.Fotografia FROM historial_grados JOIN participante ON historial_grados.id_Alumno=participante.id_Alumno JOIN grados ON historial_grados.id_Grado=grados.id_grado
+
+-----------Evento -----------
